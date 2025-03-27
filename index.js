@@ -30,12 +30,12 @@ const jokes = [
   ];
 
   const answers = [
-    { id: 1, joke: "Because he was outstanding in his field!" },
-    { id: 2, joke: "Chemotherapy." },
-    { id: 3, joke: "The crust station." },
-    { id: 4, joke: "The retail store." },
-    { id: 5, joke: "I got a bone to pick." },
-    { id: 6, joke: "She had mittens." },
+    { id: 1, answer: "Because he was outstanding in his field!" },
+    { id: 2, answer: "Chemotherapy." },
+    { id: 3, answer: "The crust station." },
+    { id: 4, answer: "The retail store." },
+    { id: 5, answer: "I got a bone to pick." },
+    { id: 6, answer: "She had mittens." },
   ];
 
 // Adding a get endpoint for the API. Whenever a user requests the URL, 
@@ -43,7 +43,7 @@ const jokes = [
 app.get('/joke', (req, res) => {
     res.status(200).send({
         joke: jokes,
-        punchline: answers
+        answer: answers
     })
 });
 
@@ -61,6 +61,6 @@ app.post('/joke/:id', (req, res) => {
 
     res.send({
         joke: jokes,
-        punchline: answers
+        answer: answers
     })
 });
