@@ -47,6 +47,12 @@ app.get('/joke', (req, res) => {
     })
 });
 
+// Shuts down the bot when CTRL+C is pressed
+process.on('SIGINT', async () => {
+    console.log("SIGINT received (CTRL+C)");
+    process.exit(0);
+  });
+
 
 // Seperate endpoint that captures dynamic values from the URL
 app.post('/joke/:id', (req, res) => {
